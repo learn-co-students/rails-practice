@@ -1,0 +1,25 @@
+<% if @author.errors && @author.errors.any? %>
+<ul>
+  <% @author.errors.full_messages.each do |message| %>
+  <li>
+    <%= message %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @author do |form| %>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :birth_year %>
+    <%= form.text_field :birth_year %>
+  </p>
+
+  <%= form.submit %>
+
+<% end %>
