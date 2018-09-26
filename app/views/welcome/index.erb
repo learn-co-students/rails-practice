@@ -2,21 +2,31 @@
 
 <p>Your mission is to recreate this app (you can skip this page) to the best of your ability. Work with your group members to find all the features of this site, and implement them using <code>rails new</code> and the know-how that you've built through the labs. Failing that, error messages, Google, your neighbors, and your instructors can help!</p>
 
-<p>Work through the <strong>entire</strong> Books controller (finish it!) before you start work on the Authors controller. If you want to do your migrations / associations for all your models first, that's fine.</p>
+<p>Work through the <strong>entire</strong> Authors controller (finish it!) before you start work on the Books controller. If you want to do your migrations / associations for all your models first, that's fine.</p>
 
 <h2>Some things to think about (in rough order of when you should think about them):</h2>
 <ol>
-  <li>Models and relationships</li>
+  <li>Models and relationships
+    <ol>
+      <li>How many books does an author have?</li>
+      <li>How many authors does a book have?</li>
+    </ol>
+    (following the links in the header should help you answer these questions!)
+  </li>
+  <li>
+    <code>rails g model</code>
+  </li>
   <li>Migrations</li>
   <li>Associations</li>
   <li>Routes</li>
-  <li>Controllers</li>
-  <li>Views</li>
-  <li>(if you haven't run <code>rails s</code> by now you should now)</li>
+  <li>
+    <code>rails g controller</code>
+  </li>
+  <li>Views (if you haven't run <code>rails s</code> yet you should now)</li>
+  <li>Strong Params</li>
   <li>Validations</li>
   <li><code>form.collection_select</code></li>
-  <li>Nested Routes</li>
-  <li>Using path helpers with form helpers</li>
+  <li>Nested Routes (this app uses them...somewhere. 🙃 You don't have to, but feel free to challenge yourself!)</li>
   <li>MVC (refactoring...?)</li>
   <li><code>before_action</code> (more refactoring...?!?)</li>
 </ol>

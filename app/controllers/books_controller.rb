@@ -8,6 +8,7 @@ class BooksController < ApplicationController
     @all_authors = Author.all
     @book = Book.includes(:authors).find(params[:id])
     @authorship = Authorship.new
+    @authorship.book = @book
   end
   
 end

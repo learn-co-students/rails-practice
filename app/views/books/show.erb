@@ -1,15 +1,14 @@
 <h1><%= @book.title %> (<%= @book.pages %> pages)</h1>
 <h2>Authors:</h2>
 <ul>
-  <% @book.authors.each do |author| %>
+  <% @book.authorships.each do |authorship| %>
     <li>
-      <%= link_to "#{ author.name } (b. #{ author.birth_year }", author_path(author) %>
+      <%= link_to "#{ authorship.author.name } (b. #{ authorship.author.birth_year }", author_path(authorship.author) %>
+      <%= form_for [@book, authorship], method: :delete, local: true do |form| %>
+        <%= form.submit "Remove author" %>
+      <% end%>
     </li>
   <% end%>
 </ul>
 
-<%= form_with model: @authorship, url: book_authorships_path(@book.id), local: true do |form| %>
-    <%= form.label :author_id %>
-    <%= form.collection_select :author_id, @all_authors, :id, :name %>
-    <%= form.submit "Add author" %>
-<% end %>
+<%= render "authorships/form" %>
