@@ -34,7 +34,7 @@ class AuthorsController < ApplicationController
   end
 
   def destroy
-    Author.delete(params[:id])
+    Author.destroy(params[:id])
     redirect_to authors_path
   end
 

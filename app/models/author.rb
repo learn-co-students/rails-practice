@@ -1,8 +1,9 @@
 class Author < ApplicationRecord
-  has_many :authorships
+  has_many :authorships, dependent: :destroy
   has_many :books, through: :authorships
 
   validates :name, presence: true, uniqueness: true
+  
   validates :birth_year, presence: true, numericality: {
     greater_than: 0,
     only_integer: true,
