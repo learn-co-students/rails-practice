@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Author.destroy_all
+Book.destroy_all
 
 #good omens
 @neil_gaiman = Author.create(name: "Neil Gaiman", birth_year: 1960)
@@ -13,6 +8,9 @@
 @good_omens = Book.create(title: "Good Omens", pages: 288)
 @good_omens.authors << @neil_gaiman
 @good_omens.authors << @terry_pratchett
+
+#reaper man
+@reaper_man = Book.create(title: "Reaper Man", pages: 352, authors: [@terry_pratchett])
 
 #heads you lose
 @lisa_lutz = Author.create(name: "Lisa Lutz", birth_year: 1970)
@@ -54,6 +52,9 @@
 @the_talisman.authors << @stephen_king
 @the_talisman.authors << @peter_straub
 
+#the shining
+@the_shining = Book.create(title: "The Shining", pages: 447, authors: [@stephen_king])
+
 #s
 @j_j_abrams = Author.create(name: "J.J. Abrams", birth_year: 1966)
 @doug_dorst = Author.create(name: "Doug Dorst", birth_year: 1880)
@@ -61,14 +62,6 @@
 @s = Book.create(title: "S.", pages: 472)
 @s.authors << @j_j_abrams
 @s.authors << @doug_dorst
-
-#welcome to night vale
-@joseph_fink = Author.create(name: "Joseph Fink", birth_year: 1880)
-@jeffrey_cranor = Author.create(name: "Jeffrey Cranor", birth_year: 1975)
-
-@welcome_to_night_vale = Book.create(title: "Welcome to Night Vale", pages: 301)
-@welcome_to_night_vale.authors << @joseph_fink
-@welcome_to_night_vale.authors << @jeffrey_cranor
 
 #dash and lily's book of dares
 @rachel_cohn = Author.create(name: "Rachel Cohn", birth_year: 1968)
@@ -85,13 +78,5 @@
 @relic = Book.create(title: "Relic", pages: 481)
 @relic.authors << @douglas_preston
 @relic.authors << @lincoln_child
-
-#the explorers guild
-@kevin_costner = Author.create(name: "Kevin Costner", birth_year: 1955)
-@jon_baird = Author.create(name: "Jon Baird", birth_year: 1880)
-
-@the_explorers_guild = Book.create(title: "The Explorers Guild", pages: 792)
-@the_explorers_guild.authors << @kevin_costner
-@the_explorers_guild.authors << @jon_baird
 
 puts "done!"

@@ -1,5 +1,17 @@
 <h1><%= @author.name %> (b. <%= @author.birth_year %>)</h1>
+Books:
+<% unless @author.books.any? %>
+  <em>(none)</em>
+<% else %>
+  <ul>
+    <% @author.books.each do |book| %> 
+    <li><%= link_to book.title, book %></li>
+    <% end %>
+  </ul>
+<% end %>
+<nav>
 <%= link_to "Edit #{ @author.name }", edit_author_path(@author) %>
 <%= form_with model: @author, method: :delete, local: true do |form| %>
   <%= form.submit "Delete #{ @author.name }" %>
 <% end %>
+</nav>

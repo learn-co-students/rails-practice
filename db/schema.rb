@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_25_185621) do
+ActiveRecord::Schema.define(version: 2018_10_17_144734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2018_09_25_185621) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.integer "pages"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "domain_mappings", force: :cascade do |t|
+    t.string "subdomain"
+    t.string "cohort_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

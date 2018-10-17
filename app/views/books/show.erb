@@ -3,7 +3,7 @@
 <ul>
   <% @book.authorships.each do |authorship| %>
     <li>
-      <%= link_to "#{ authorship.author.name } (b. #{ authorship.author.birth_year }", author_path(authorship.author) %>
+      <%= link_to "#{ authorship.author.name } (b. #{ authorship.author.birth_year })", author_path(authorship.author) %>
       <%= form_for [@book, authorship], method: :delete, local: true do |form| %>
         <%= form.submit "Remove author" %>
       <% end%>
