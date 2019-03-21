@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   # resources :authorships, only: [:create]
   get "/", to: "welcome#index"
+  delete "/danger/clear/all", to: "welcome#clairol"
 
   resources :books do
     resources :authorships, only: [:create, :destroy]
